@@ -1,0 +1,41 @@
+# HEREDITARY HEMOLYTIC ANEMIA AI SCREENING META-ANALYSIS
+# Reproduces all figures/tables from manuscript
+
+# Load libraries
+library(metafor)
+library(mada)
+library(ggplot2)
+
+# IMPORT DATA
+performance_data <- read.csv("raw_data/Raw_performance_data.csv")
+quadas_data <- read.csv("raw_data/Full_QUADAS-2_assessment.csv")
+
+# FUNCTION: Convert proportions to logits
+logit_transform <- function(p) {
+  log(p / (1 - p))
+}
+
+# MAIN ANALYSIS: Bivariate random-effects model
+fit <- reitsma(
+  cbind(
+    logit_transform(performance_data$Sensitivity),
+    logit_transform(performance_data$Specificity)
+  )
+)
+
+# Forest plot (Figure 3)
+forest(fit, 
+       slab = performance_data$Study_ID,
+       xlim = c(-4, 4),
+       main = "Diagnostic Accuracy of AI-Augmented Screening")
+
+# SROC curve (Figure 3 inset)
+plot(sroc(fit), 
+     predict = TRUE, 
+     main = "SROC Curve")
+
+# SUBGROUP ANALYSIS: By region (Figure 4)
+africa_data <- subset(performance_data, Country %in% c("Nigeria","Ghana","Sudan"))
+middle_east_data <- subset(performance_data, Country %in% c("Saudi Arabia","Iran","UAE"))
+
+# [Add remaining code from GitHub repo: https://github.com/thalAI-review/analysis]
