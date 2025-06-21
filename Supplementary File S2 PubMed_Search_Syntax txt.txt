@@ -1,0 +1,8 @@
+﻿("premarital screening" OR "carrier detection")
+AND 
+("hereditary hemolytic anemia" OR thalassemia OR "sickle cell disease")
+AND 
+("artificial intelligence" OR "machine learning" OR "deep learning")
+AND 
+("complete blood count" OR CBC OR "blood smear" OR "erythrocyte sedimentation rate")
+Filters: 2010/01/01-2025/06/30; English/Arabic

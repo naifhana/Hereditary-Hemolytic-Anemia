@@ -1,0 +1,4 @@
+﻿"Analysis_Cohort,n_Studies,Sensitivity(%),Sensitivity_95%_CI,Specificity(%),Specificity_95%_CI,AUC,AUC_95%_CI,Cost_Savings_Person(USD),Cost_Savings_95%_CI(USD)"
+"Original Protocol,82,92.8,""91.3-94.1"",91.5,""89.7-93.0"",0.93,""0.91-0.95"",8.50,""5.20-12.30"""
+"+ Community Studies,85,92.6,""91.1-93.9"",91.2,""89.4-92.8"",0.93,""0.91-0.95"",8.20,""4.90-11.80"""
+"Difference,-0.2,""-0.7 to 0.3"",-0.3,""-0.9 to 0.3"",0.00,""-0.01 to 0.01"",-0.30,""-0.80 to 0.20"""
